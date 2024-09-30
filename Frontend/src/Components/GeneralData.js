@@ -1,1 +1,1 @@
-export let API_Endpoint = "https://crudapplication-weao.onrender.com";
+export let API_Endpoint = "http://localhost:3000";

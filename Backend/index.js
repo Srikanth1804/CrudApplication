@@ -10,7 +10,7 @@ Mongoose.connect(process.env.MONGODB)
     console.log("Database Connected!");
   })
   .catch((e) => {
-    console.log("Database Connection Failed!");
+    console.log("Database Connection Failed!", e);
   });
 
 //middlewares
