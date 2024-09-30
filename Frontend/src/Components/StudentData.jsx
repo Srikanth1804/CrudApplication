@@ -22,50 +22,54 @@ const StudentData = () => {
   };
 
   let HandleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form submission default behavior
 
+    // Function to capitalize the first letter of each word
     let CapitalizeFirstLetter = (str) => {
       return str
-
         .toLowerCase()
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
     };
 
+    // Create the user data object
     let Userdata = {
       name: CapitalizeFirstLetter(name),
-      age,
+      age, // Ensure age is a number, or convert it if needed
       city: CapitalizeFirstLetter(city),
     };
     console.log(Userdata);
 
-    window.location.reload();
-
+    // Check if updating or adding new data
     if (Update) {
+      // Update existing data
       Axios.put(`${API_Endpoint}/data/updatedata/${Update}`, Userdata)
         .then((res) => {
           console.log(res.data);
           Settoast(false);
           Fetchdata();
           Setupdate("");
+          window.location.reload();
         })
         .catch((e) => {
-          console.log("Update Failed!");
+          console.log("Update Failed!", e);
         });
     } else {
+      // Add new data
       Axios.post(`${API_Endpoint}/data/adddata`, Userdata)
         .then((res) => {
           console.log(res.data);
           Settoast(false);
           Fetchdata();
+          setname("");
+          setage("");
+          setcity("");
+          window.location.reload();
         })
         .catch((e) => {
-          console.log("Data Create Failed!");
+          console.log("Data Create Failed!", e);
         });
-      setname("");
-      setage("");
-      setcity("");
     }
   };
 
