@@ -1,0 +1,93 @@
+#container {
+  text-align: center;
+}
+#container h2 {
+  font-variant: small-caps;
+  border-bottom: 3px double black;
+  display: inline-block;
+}
+
+#input-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#input-search input {
+  margin: 20px;
+  width: 50%;
+  outline: none;
+}
+
+#input-search button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 2px 20px;
+  cursor: pointer;
+}
+
+#input-search button:hover {
+  background-color: darkgreen;
+}
+
+#table-data {
+  margin: 20px auto;
+  width: 90%;
+}
+
+#table-data table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+#table-data th,
+#table-data td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+#table-data th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#table-data tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#table-data tr:hover {
+  background-color: #f1f1f1;
+}
+
+.green {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-variant: small-caps;
+}
+
+.green:hover {
+  background-color: darkgreen;
+}
+
+.red {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-variant: small-caps;
+}
+
+.red:hover {
+  background-color: darkred;
+}
