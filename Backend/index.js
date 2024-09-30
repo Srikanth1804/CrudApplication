@@ -4,6 +4,8 @@ const CrudRouter = require("./Module/Crud.routes");
 let App = Express();
 let Cors = require("cors");
 require("dotenv").config();
+App.use(Express.json());
+App.use(Cors());
 
 Mongoose.connect(process.env.MONGODB)
   .then(() => {
@@ -14,8 +16,7 @@ Mongoose.connect(process.env.MONGODB)
   });
 
 //middlewares
-App.use(Express.json());
-App.use(Cors());
+
 App.use("/data", CrudRouter);
 
 App.listen(3000, () => {
