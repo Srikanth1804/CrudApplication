@@ -3,9 +3,14 @@ let Mongoose = require("mongoose");
 const CrudRouter = require("./Module/Crud.routes");
 let App = Express();
 let Cors = require("cors");
+App.use(
+  Cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  })
+);
 require("dotenv").config();
 App.use(Express.json());
-App.use(Cors());
 
 Mongoose.connect(process.env.MONGODB)
   .then(() => {
